@@ -1,0 +1,10 @@
+<div class="cards-container">
+    @for (item of produtos; track item) {
+    <div class="card">
+            <img [src]="item.img" [alt]="item.rotulo">
+            <h3>{{item.rotulo}}</h3>
+            <p>{{item.detalhe}}</p>
+    
+    </div>
+}
+</div>
