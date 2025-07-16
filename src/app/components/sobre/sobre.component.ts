@@ -1,33 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sobre',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sobre.component.html',
   styleUrl: './sobre.component.css'
 })
-export class SobreComponent implements OnInit{
+export class SobreComponent implements OnInit, OnDestroy {
   imagens = [
-    'https://picsum.photos/100/100',
-    'https://picsum.photos/200/200',
-    'https://picsum.photos/300/300',
-    'https://picsum.photos/400/400',
-    'https://picsum.photos/500/500'
+    'https://picsum.photos/800/400?random=1',
+    'https://picsum.photos/800/400?random=2',
+    'https://picsum.photos/800/400?random=3'
   ];
 
   currentImageIndex = 0;
+  private intervalId: any;
 
   ngOnInit() {
-    setInterval(() => {
+    this.iniciarAutoplay();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+  iniciarAutoplay() {
+    this.intervalId = setInterval(() => {
       this.nextImage();
     }, 3000);
   }
 
-  nextImage() {
+  private nextImage() {
     this.currentImageIndex = (this.currentImageIndex + 1) % this.imagens.length;
   }
+
+  public imagemAnterior(): void {
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.imagens.length) % this.imagens.length;
+    this.resetarAutoplay();
+  }
+
+  public proximaImagem(): void {
+    this.nextImage();
+    this.resetarAutoplay();
+  }
+
+  private resetarAutoplay(): void {
+    clearInterval(this.intervalId);
+    this.iniciarAutoplay();
+  }
 }
-
-
-

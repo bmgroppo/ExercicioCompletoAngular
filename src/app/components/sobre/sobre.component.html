@@ -6,7 +6,9 @@
     </p>
 
     <div class="carousel">
-        <img [src]="imagens[currentImageIndex]" alt="Imagem do Carrossel">
+        <button class="arrow prev" (click)="imagemAnterior()">&#10094;</button>
+            <img [src]="imagens[currentImageIndex]" alt="Imagem do Carrossel">
+        <button class="arrow next" (click)="proximaImagem()">&#10095;</button>
     </div>
 </div>
 
