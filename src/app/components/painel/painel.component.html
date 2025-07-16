@@ -1,1 +1,9 @@
-<p>painel works!</p>
+<h2>Login</h2>
+<form (ngSubmit)="login()">
+  <input type="text" placeholder="Usuário" [(ngModel)]="usuario" name="usuario" required />
+  <input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha" required />
+  <button type="submit">Entrar</button>
+  @if (erro) {
+    <p style="color:red">{{ erro }}</p>
+  } 
+</form>

@@ -1,0 +1,40 @@
+
+.rodape {
+    background-color: #a7e3f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rodape p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.rodape-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape-info a {
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .rodape { padding: 10px; }
+}

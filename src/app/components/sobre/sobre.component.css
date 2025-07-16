@@ -1,0 +1,27 @@
+.sobre {
+    padding: 20px;
+    text-align: center;
+}
+
+.sobre h2 {
+    color: #333;
+}
+
+.sobre p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.carousel {
+    margin-top: 20px;
+    overflow: hidden;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel img {
+    width: 300px;
+    object-fit: contain; 
+}

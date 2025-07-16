@@ -32,3 +32,18 @@
     height: 180px;
     object-fit: cover; /* A imagem cobre a área sem distorcer */
 }
+
+button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
